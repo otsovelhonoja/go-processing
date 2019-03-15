@@ -13,17 +13,18 @@ def read_go_ids(filename):
     a set of associated GO-ids as value.
     """
     go_ids_dict = {}
+
     with open(filename) as file_obj:
 
         for line in file_obj:
             # ignore comments
             if line.startswith('!'):
                 continue
-
             line = line.split()
             db_id = line[1]             # gene name
-            # make sure to use only use values starting with 'GO:' as ids
+
             for word in line:
+                # make sure to only use values with 'GO:'-prefix as ids
                 if word.startswith('GO:'):
                     go_id = word[3:]    # GO-id without 'GO:'
 
@@ -72,16 +73,12 @@ def add_go_ids(to_dict, from_dict):
     """PART 4. Returns back the first dictionary with added parent GO-ids
     from the second dictionary.
     """
-    # iterate through all the genes in the first dict
+    # iterate through all the genes in the to_dict
     for gene, go_ids in to_dict.items():
-        new_ids = set()
-        # iterate through all GO-ids for gene
-        for go_id in go_ids:
-            # check if parent ids exist for GO-id
-            if go_id in from_dict.keys():
-                # add all parent ids to temporary set of GO-ids
-                for parent_id in from_dict[go_id]:
-                    new_ids.add(parent_id)
+        # find new parent ids from from_dict
+        new_ids = set(parent for go_id in go_ids if go_id in from_dict
+                      for parent in from_dict[go_id])
+
         # merge new GO-ids with the old
         to_dict[gene] = to_dict[gene].union(new_ids)
 
@@ -95,8 +92,7 @@ def count_go_classes(id_dict):
     count_dict = Counter()
     # iterate through the list of GO-ids for each gene
     for id_list in id_dict.values():
-        # count occurances of each id and
-        # merge them with the rest
+        # count occurances of each id andmerge them with the rest
         count_dict.update(Counter(id_list))
 
     return count_dict
