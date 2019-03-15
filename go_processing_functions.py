@@ -89,7 +89,7 @@ def add_go_ids(to_dict, from_dict):
 
 
 def count_go_classes(id_dict):
-    """ PART 5. Return a dictionary with GO-id as key and
+    """PART 5. Return a dictionary with GO-id as key and
     a count of occurances as value.
     """
     count_dict = Counter()
@@ -100,3 +100,13 @@ def count_go_classes(id_dict):
         count_dict.update(Counter(id_list))
 
     return count_dict
+
+
+def output_most_common_classes(count_dict, class_dict, n):
+    """PART 6. Outputs a tsv file with n most common GO-classes"""
+
+    with open('most_common_go_classes.tsv', 'w') as out_file:
+        out_file.write('id\tcount\tclass\n')
+
+        for c in count_dict.most_common(n):
+            out_file.write(f'GO:{c[0]}\t{c[1]}\t{class_dict[c[0]]}\n')

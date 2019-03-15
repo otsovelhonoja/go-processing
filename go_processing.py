@@ -4,6 +4,7 @@ Created on Tue Mar 12 15:47:10 2019
 
 @author: Otso
 """
+
 from sys import argv
 import go_processing_functions as go
 
@@ -18,6 +19,8 @@ def main():
         file1 = argv[1]
         file2 = argv[2]
 
+    print('Analysing...')
+
     ids = go.read_go_ids(file1)
     parents = go.read_go_parents(file2)
     classes = go.read_go_classes(file2)
@@ -25,13 +28,9 @@ def main():
     new_ids = go.add_go_ids(ids, parents)
     counts = go.count_go_classes(new_ids)
 
-    with open('most_common_go_classes.txt', 'w') as out_file:
+    go.output_most_common_classes(counts, classes, 50)
 
-        out_file.write(f'Top 50 most common GO-classes in "{file1}"\n'
-                       'id\tcount\tclass\n')
-
-        for c in counts.most_common(50):
-            out_file.write(f'GO:{c[0]}\t{c[1]}\t{classes[c[0]]}\n')
+    print('\nFinished!')
 
 
 if __name__ == '__main__':
