@@ -1,0 +1,51 @@
+id	count	class
+GO:0008150	24150	biological_process
+GO:0005575	23818	cellular_component
+GO:0003674	23290	molecular_function
+GO:0005623	16251	cell
+GO:0044464	16245	cell part
+GO:0009987	14982	cellular process
+GO:0005622	13898	intracellular
+GO:0044424	13790	intracellular part
+GO:0005488	13101	binding
+GO:0065007	12383	biological regulation
+GO:0043226	12219	organelle
+GO:0043229	11955	intracellular organelle
+GO:0050789	11790	regulation of biological process
+GO:0050794	11131	regulation of cellular process
+GO:0043227	11002	membrane-bounded organelle
+GO:0005737	10826	cytoplasm
+GO:0043231	10273	intracellular membrane-bounded organelle
+GO:0016020	9339	membrane
+GO:0005515	8886	protein binding
+GO:0008152	8574	metabolic process
+GO:0050896	8549	response to stimulus
+GO:0044444	8193	cytoplasmic part
+GO:0071704	8105	organic substance metabolic process
+GO:0044238	7747	primary metabolic process
+GO:0032501	7605	multicellular organismal process
+GO:0044237	7524	cellular metabolic process
+GO:0044422	7333	organelle part
+GO:0044425	7318	membrane part
+GO:0006807	7175	nitrogen compound metabolic process
+GO:0044446	7064	intracellular organelle part
+GO:0005634	6820	nucleus
+GO:0051716	6813	cellular response to stimulus
+GO:0043170	6457	macromolecule metabolic process
+GO:0019222	6276	regulation of metabolic process
+GO:0031224	6047	intrinsic component of membrane
+GO:0016021	5883	integral component of membrane
+GO:0003824	5853	catalytic activity
+GO:0048518	5833	positive regulation of biological process
+GO:0060255	5831	regulation of macromolecule metabolic process
+GO:0031323	5829	regulation of cellular metabolic process
+GO:0080090	5697	regulation of primary metabolic process
+GO:0051171	5565	regulation of nitrogen compound metabolic process
+GO:0032502	5556	developmental process
+GO:0032991	5504	protein-containing complex
+GO:0007154	5421	cell communication
+GO:0043167	5380	ion binding
+GO:0023052	5302	signaling
+GO:0071944	5267	cell periphery
+GO:0044260	5264	cellular macromolecule metabolic process
+GO:0071840	5248	cellular component organization or biogenesis

@@ -1,0 +1,11 @@
+id	count	class
+GO:0008150	24150	biological_process
+GO:0005575	23818	cellular_component
+GO:0003674	23290	molecular_function
+GO:0005623	16251	cell
+GO:0044464	16245	cell part
+GO:0009987	14982	cellular process
+GO:0005622	13898	intracellular
+GO:0044424	13790	intracellular part
+GO:0005488	13101	binding
+GO:0065007	12383	biological regulation
