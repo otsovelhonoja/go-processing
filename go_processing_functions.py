@@ -105,7 +105,7 @@ def count_go_classes(id_dict):
 def output_most_common_classes(count_dict, class_dict, n):
     """PART 6. Outputs a tsv file with n most common GO-classes"""
 
-    with open('most_common_go_classes.tsv', 'w') as out_file:
+    with open(f'top{n}_most_common_go_classes.tsv', 'w') as out_file:
         out_file.write('id\tcount\tclass\n')
 
         for c in count_dict.most_common(n):

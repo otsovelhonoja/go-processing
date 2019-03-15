@@ -11,24 +11,32 @@ import go_processing_functions as go
 
 def main():
 
-    if len(argv) < 2:
-        file1 = 'data/gene_association.mgi'
-        file2 = 'data/mergeGO.out'
+    file1 = 'data/gene_association.mgi'
+    file2 = 'data/mergeGO.out'
 
+    if len(argv) == 1:
+        n = 50
+    elif len(argv) == 2:
+        n = int(argv[1])
     else:
+        n = int(argv[3])
         file1 = argv[1]
         file2 = argv[2]
 
-    print('Analysing...')
+    print('\nAnalysing...')
 
+    # Part 1
     ids = go.read_go_ids(file1)
+    # Part 2
     parents = go.read_go_parents(file2)
+    # Part 3
     classes = go.read_go_classes(file2)
-
+    # Part 4
     new_ids = go.add_go_ids(ids, parents)
+    # Part 5
     counts = go.count_go_classes(new_ids)
-
-    go.output_most_common_classes(counts, classes, 50)
+    # Part 6
+    go.output_most_common_classes(counts, classes, n)
 
     print('\nFinished!')
 
