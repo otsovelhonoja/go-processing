@@ -2,7 +2,7 @@
 """
 Created on Tue Mar 12 15:15:58 2019
 
-@author: Otso
+@author: Otso Velhonoja
 """
 
 from collections import Counter
@@ -17,18 +17,19 @@ def read_go_ids(filename):
     with open(filename) as file_obj:
 
         for line in file_obj:
-            # ignore comments
+            # ignore comment lines
             if line.startswith('!'):
                 continue
             line = line.split()
-            db_id = line[1]             # gene name
+            gene_name = line[1]
 
             for word in line:
                 # make sure to only use values with 'GO:'-prefix as ids
                 if word.startswith('GO:'):
                     go_id = word[3:]    # GO-id without 'GO:'
+                    break
 
-            go_ids_dict.setdefault(db_id, set()).add(go_id)
+            go_ids_dict.setdefault(gene_name, set()).add(go_id)
 
     return go_ids_dict
 

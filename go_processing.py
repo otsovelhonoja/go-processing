@@ -2,7 +2,7 @@
 """
 Created on Tue Mar 12 15:47:10 2019
 
-@author: Otso
+@author: Otso Velhonoja
 """
 
 from sys import argv
@@ -19,9 +19,9 @@ def main():
     elif len(argv) == 2:
         n = int(argv[1])
     else:
-        n = int(argv[3])
         file1 = argv[1]
         file2 = argv[2]
+        n = int(argv[3])
 
     print('\nAnalysing...')
 
